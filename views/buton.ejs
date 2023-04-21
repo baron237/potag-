@@ -1,0 +1,31 @@
+<script>
+const Allumer = document.querySelector("#Allumer");
+
+Allumer.addEventListener("click", function() {
+  fetch("/aroser")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Erreur lors de la requête");
+      }
+      console.log("La fontaine est ouverte allumée !");
+    })
+    .catch(error => {
+      console.error(error);
+    });
+});
+
+const stop = document.querySelector("#stop");
+
+      stop.addEventListener("click", function() {
+        fetch("/stop")
+          .then(response => {
+            if (!response.ok) {
+              throw new Error("Erreur lors de la requête");
+            }
+            console.log("La fontaine est ouverte allumée !");
+          })
+          .catch(error => {
+            console.error(error);
+          });
+      });
+    </script>
